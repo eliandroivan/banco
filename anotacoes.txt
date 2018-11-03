@@ -1,0 +1,17 @@
+
+
+************************
+repositório: https://github.com/eliandroivan/banco.git
+estrutura: .NET Framework 4.5
+
+
+************************
+comandos git: 
+- abrir terminal no diretorio do projeto
+- git init
+- git remote add origin https://github.com/eliandroivan/banco.git
+- git fetch origin master
+- git pull origin master
+- git status
+trabalha no projeto
+- git add . 
