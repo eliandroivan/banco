@@ -15,3 +15,6 @@ comandos git:
 - git status
 trabalha no projeto
 - git add . 
+- git status
+- git commit -m "primeiro commit"
+- git push origin master

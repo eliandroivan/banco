@@ -20,7 +20,7 @@ namespace Banco
         private void button1_Click(object sender, EventArgs e)
         {
             ContaModel c = new ContaModel();
-            c.numero = 1;
+            c.Numero = 1;
             c.Depositar(100.0);            MessageBox.Show(c.saldo.ToString());
             //	inicializa	os	atributos
             //	Se	a	conta	tiver	saldo	suficiente,	deuCerto	conterá	o	valor	true
@@ -40,11 +40,29 @@ namespace Banco
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ContaModel contaVictor = new ContaModel();
-            contaVictor.titular = "victor";
-            contaVictor.numero = 1;
-            contaVictor.saldo = 100.0;
-            MessageBox.Show(contaVictor.titular);
+            //ClienteModel victor = new ClienteModel();
+            //victor.nome = "victor";
+
+            //ContaModel contaVictor = new ContaModel();
+            //contaVictor.titular = victor;
+            //contaVictor.numero = 1;
+            //contaVictor.saldo = 100.0;
+            //MessageBox.Show(contaVictor.titular.nome);
+
+
+
+            //ContaModel conta = new ContaModel();
+            //ClienteModel cliente = new ClienteModel();
+            //conta.titular = cliente;
+            //conta.titular.nome = "alberto";
+
+
+            ContaModel umaConta = new ContaModel();
+            ClienteModel guilherme = new ClienteModel();
+            guilherme.Rg = "12345678-9";
+            umaConta.titular = guilherme;
+            umaConta.titular.Rg = "98765432-1";
+            MessageBox.Show(guilherme.Rg);
         }
     }
 }

@@ -6,11 +6,24 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    class ContaModel
+    internal class ContaModel
     {
-        public int numero;
-        public string titular;
-        public double saldo = 020;
+        
+        public ClienteModel titular { get; set; }
+        public double saldo { get; private set; }
+
+        private int numero { get; set; }
+        public int Numero // este é uma property
+        {
+            get //leitura
+            {
+                return this.numero;
+            }
+            set //gravação
+            {
+                this.numero = value;
+            }
+        }
 
         public bool Sacar(double valor)
         {
@@ -30,12 +43,20 @@ namespace Banco
                 this.saldo += valor;
             }
             
-        }        public void Transferir(double valor, ContaModel contaDestino)
+        }        
+
+        public void Transferir(double valor, ContaModel contaDestino)
         {
             if (this.Sacar(valor))
             {
                 contaDestino.Depositar(valor);
             }
-        }
+        }        public double ObterSaldo()
+        {
+            return this.saldo;
+        }        public void DefinirNumero(int numero)
+        {
+            this.numero = numero;
+        }
     }
 }
