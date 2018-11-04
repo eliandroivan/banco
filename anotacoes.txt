@@ -18,3 +18,17 @@ trabalha no projeto
 - git status
 - git commit -m "primeiro commit"
 - git push origin master
+
+
+
+
+
+
+
+
+
+
+
+
+***
+conferir a parte sobre contrutores e properties

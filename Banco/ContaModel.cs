@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    internal class ContaModel
+    public class ContaModel
     {
         
         public ClienteModel titular { get; set; }
-        public double saldo { get; private set; }
+        private double saldo { get; set; }
 
         private int numero { get; set; }
         public int Numero // este é uma property
@@ -21,13 +21,15 @@ namespace Banco
             }
             set //gravação
             {
-                this.numero = value;
+                //this.numero = value;
+                Random numAleatorio = new Random();
+                this.numero = numAleatorio.Next(1, 999);
             }
         }
 
         public bool Sacar(double valor)
         {
-            if ((this.saldo >= valor) && (valor > 0))
+            if ((this.saldo >= valor) && (valor > 1))
             {
                 this.saldo -= valor;
                 return true;
@@ -54,9 +56,11 @@ namespace Banco
         }        public double ObterSaldo()
         {
             return this.saldo;
-        }        public void DefinirNumero(int numero)
+        }        public void DefinirNumero()
         {
-            this.numero = numero;
+            //this.numero = numero;
+            Random numAleatorio = new Random();
+            this.numero = numAleatorio.Next(0,999);
         }
     }
 }

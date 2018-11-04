@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Banco
 {
-    internal class ClienteModel
+    public class ClienteModel
     {
-        public string Nome;
+        public string Nome
+        {
+            get { return this.nome; }
+            set { this.nome = value.ToUpper(); }
+        }
+        private string nome;
+        
         public string Cpf;
         public string Rg;
         public string Endereco;        public int Idade { get; set; }
@@ -26,7 +32,7 @@ namespace Banco
         }
 
         //	construtor que recebe o nome e a idade
-        public void Cliente(string nome, int idade)
+        public ClienteModel(string nome, int idade)
         {
             this.Nome = nome;
             this.Idade = idade;
