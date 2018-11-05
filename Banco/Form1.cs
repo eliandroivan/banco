@@ -12,35 +12,30 @@ namespace Banco
 {
     public partial class Form1 : Form
     {
+        private ContaModel conta;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDepositar_Click(object sender, EventArgs e)
         {
-            //ContaModel c = new ContaModel();
-            //c.Numero = 1;
-            //c.Depositar(100.0);            //MessageBox.Show(c.saldo.ToString());
-
-            //	inicializa	os	atributos
-            //	Se	a	conta	tiver	saldo	suficiente,	deuCerto	conterá	o	valor	true
-            //	senão,	ela	conterá	false
-            //bool deuCerto = c.Sacar(100.0);
-            //if (deuCerto)
-            //{
-            //    MessageBox.Show("Saque realizado com sucesso");
-            //    MessageBox.Show(c.saldo.ToString());
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Saldo Insuficiente");
-            //}
+            string valorDigitado = txtValor.Text;
+            double valorOperacao = Convert.ToDouble(valorDigitado);
+            conta.Depositar(valorOperacao);
+            txtSaldo.Text = Convert.ToString(this.conta.ObterSaldo());
+           
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSacar_Click(object sender, EventArgs e)
         {
+            string valorDigitado = txtValor.Text;
+            double valorOperacao = Convert.ToDouble(valorDigitado);
+            conta.Sacar(valorOperacao);
+            txtSaldo.Text = Convert.ToString(this.conta.ObterSaldo());
+
             //ClienteModel victor = new ClienteModel();
             //victor.nome = "victor";
 
@@ -62,23 +57,25 @@ namespace Banco
             //ClienteModel cliente = new ClienteModel();
             //umaConta.DefinirNumero();
             //MessageBox.Show(umaConta.Numero.ToString());
-            
+
         }
 
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ContaModel novaConta = new ContaModel();
+            this.conta = new ContaModel();
             ClienteModel novoCliente = new ClienteModel("andré gonzales", 44);
-            novaConta.titular = novoCliente;
-            novaConta.DefinirNumero();
-            txtTitular.Text = novaConta.titular.Nome;
-            txtNumero.Text = Convert.ToString(novaConta.Numero);
-            txtSaldo.Text = Convert.ToString(novaConta.ObterSaldo());
+            conta.titular = novoCliente;
+            conta.DefinirNumero();
+            txtTitular.Text = conta.titular.Nome;
+            txtNumero.Text = Convert.ToString(conta.Numero);
+            txtSaldo.Text = Convert.ToString(conta.ObterSaldo());
             
 
 
         }
+
+        
     }
 }

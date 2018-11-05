@@ -17,7 +17,9 @@ namespace Banco
         
         public string Cpf;
         public string Rg;
-        public string Endereco;        public int Idade { get; set; }
+        public string Endereco;
+        public int Idade { get; set; }
+
         public bool EhMaiorDeIdade()
         {
             if (this.Idade > 18)

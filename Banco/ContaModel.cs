@@ -25,7 +25,9 @@ namespace Banco
                 Random numAleatorio = new Random();
                 this.numero = numAleatorio.Next(1, 999);
             }
-        }
+        }
+
+        
 
         public bool Sacar(double valor)
         {
@@ -38,25 +40,34 @@ namespace Banco
             {
                 return false;
             }
-        }        public void Depositar(double valor)
+        }
+
+        public void Depositar(double valor)
         {
             if (valor > 0)
             {
                 this.saldo += valor;
             }
             
-        }        
+        }
+        
 
         public void Transferir(double valor, ContaModel contaDestino)
         {
             if (this.Sacar(valor))
             {
                 contaDestino.Depositar(valor);
-            }
-        }        public double ObterSaldo()
+            }
+
+        }
+
+        public double ObterSaldo()
         {
             return this.saldo;
-        }        public void DefinirNumero()
+        }
+
+
+        public void DefinirNumero()
         {
             //this.numero = numero;
             Random numAleatorio = new Random();

@@ -16,10 +16,10 @@ comandos git:
 trabalha no projeto
 - git add . 
 - git status
-- git commit -m "primeiro commit"
+- git commit -m "descrição do commit"
 - git push origin master
 
-
+pag 76
 
 
 
@@ -32,3 +32,4 @@ trabalha no projeto
 
 ***
 conferir a parte sobre contrutores e properties
+herança cap 10 p88
